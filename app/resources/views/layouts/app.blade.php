@@ -16,17 +16,19 @@
     </head>
     <body>
         <!-- Page Heading -->
-        <header>
-            <h1>Instagram風画像投稿アプリケーション</h1>
+        <header class="flex justify-center items-center h-12 mb-3 bg-gray-300">
+            <h1 class="text-lg font-bold">Instagram風画像投稿アプリケーション</h1>
         </header>
 
         <!-- Page Content -->
         <main>
-            @yield('content')
+            <div class="mx-3">
+                @yield('content')
+            </div>
         </main>
 
         <!-- Page Footer -->
-         <footer>
+         <footer class="flex justify-center items-center h-12 bg-gray-300">
             <p>© 2025 Instagram風画像投稿アプリケーション v0.0.1</p>
          </footer>
     </body>
