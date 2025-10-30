@@ -17,7 +17,7 @@
     <body>
         <!-- Page Heading -->
         <header class="flex justify-center items-center h-12 mb-3 bg-gray-300">
-            <h1 class="text-lg font-bold">Instagram風画像投稿アプリケーション</h1>
+            <h1 class="text-lg font-bold"><a href="{{ route('posts.index') }}">Instagram風画像投稿アプリケーション</a></h1>
         </header>
 
         <!-- Page Content -->
