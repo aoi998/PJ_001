@@ -11,11 +11,13 @@
 
     @foreach ($posts as $post)
     <div class="overflow-hidden shadow-lg rounded-md h-90 w-60 mx-auto">
-        <img alt="blog photo" src="https://picsum.photos/200" class="max-h-40 w-full object-cover" />
-        <div class="w-full p-4">
-            <p class="text-gray-800 text-xl font-medium mb-2">{{ $post->title }}</p>
-            <p class="text-gray-600 font-light text-md">{{ $post->body }}</p>
-        </div>
+        <a href="{{ route('post.show', ['post' => $post]) }}" class="block h-full w-full">
+            <img alt="blog photo" src="https://picsum.photos/200" class="max-h-40 w-full object-cover" />
+            <div class="w-full p-4">
+                <p class="text-gray-800 text-xl font-medium mb-2">{{ $post->title }}</p>
+                <p class="text-gray-600 font-light text-md">{{ $post->body }}</p>
+            </div>
+        </a>
     </div>
     @endforeach
 </div>
