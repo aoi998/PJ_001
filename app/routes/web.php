@@ -9,9 +9,11 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-Route::get('/posts/create', [PostController::class, 'create'])->name('post.create');
-Route::post('/posts', [PostController::class, 'store'])->name('post.store');
-Route::get('/posts/{post}', [PostController::class, 'show'])->name('post.show');
+Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+Route::post('/post/create', [PostController::class, 'store'])->name('post.store');
+Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+Route::get('/post/edit/{post}', [PostController::class, 'edit'])->name('post.edit');
+Route::post('/post/edit/{post}', [PostController::class, 'update'])->name('post.update');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

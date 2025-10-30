@@ -52,7 +52,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit', ['post' => $post]);
     }
 
     /**
@@ -60,7 +60,15 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        
+        $validated = $request->validate([
+            'id' => 'required',
+            'title' => 'required|max:128',
+            'body' => 'required',
+        ]);
+
+        $result = $post->updatePost($validated);
+        return redirect()->route('post.show', ['post' => $post]);
     }
 
     /**

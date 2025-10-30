@@ -20,4 +20,13 @@ class Post extends Model
         $post->save();
         return $post;
     }
+
+    public function updatePost($data)
+    {
+        $post = Post::find($data['id']);
+        $post->title = $data['title'];
+        $post->body = $data['body'];
+        $post->save();
+        return $post;
+    }
 }

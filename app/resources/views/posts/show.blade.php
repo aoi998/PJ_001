@@ -15,8 +15,14 @@
     </div>
 
     <div class="flex justify-center gap-6 mx-auto">
-        <button type="button" class="bg-gray-500 text-white rounded-md px-4 py-2">削除</button>
-        <button type="button" class="bg-green-500 text-white rounded-md px-4 py-2">編集</button>
+        <div class="justify-self-center">
+            <form action="{{ route('post.edit', ['post' => $post]) }}" method="GET">
+                <button type="submit" class="bg-green-500 text-white rounded-md px-4 py-2">編集</button>
+            </form>
+        </div>
+        <div class="justify-self-center">
+            <button type="button" class="bg-gray-500 text-white rounded-md px-4 py-2">削除</button>
+        </div>
     </div>
 </div>
 @endsection
