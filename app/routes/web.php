@@ -9,12 +9,6 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
-Route::post('/post/create', [PostController::class, 'store'])->name('post.store');
-Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
-Route::get('/post/edit/{post}', [PostController::class, 'edit'])->name('post.edit');
-Route::post('/post/edit/{post}', [PostController::class, 'update'])->name('post.update');
-Route::post('/post/delete/{post}', [PostController::class, 'destroy'])->name('post.destroy');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,6 +18,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // 投稿関連
+    Route::prefix('post')->group(function () {
+        Route::get('/create', [PostController::class, 'create'])->name('post.create');
+        Route::post('/create', [PostController::class, 'store'])->name('post.store');
+        Route::get('/edit/{post}', [PostController::class, 'edit'])->name('post.edit');
+        Route::post('/edit/{post}', [PostController::class, 'update'])->name('post.update');
+        Route::post('/delete/{post}', [PostController::class, 'destroy'])->name('post.destroy');
+    });
 });
+
+// '/post/{post}'は'/post/create'よりも後に記述する
+// これにより、'post/create'が`{post}`のワイルドカードにマッチして誤ってshow()にルーティングされるのを防ぐ
+Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
 
 require __DIR__.'/auth.php';
