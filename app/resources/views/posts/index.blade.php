@@ -5,7 +5,7 @@
 @section('content')
 <div class="grid grid-cols-1 gap-4 pt-3 pb-3 mx-3">
     <div class="flex justify-between items-center mx-3">
-        <h1 class="text-lg font-bold dark:text-white">投稿一覧</h1>
+        <h1 class="text-lg font-bold text-gray-800 dark:text-gray-200">投稿一覧</h1>
         <button type="button" onclick="location.href='/post/create'" class="bg-blue-500 dark:bg-gray-200 dark:text-gray-800 text-white rounded-md px-4 py-2">新規投稿</button>
     </div>
 
