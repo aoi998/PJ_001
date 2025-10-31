@@ -38,10 +38,16 @@
                         </form>
                     </li>
                     <li>
+                        @if (auth()->check())
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button type="submit" class="p-3 text-sm w-full text-left dark:text-gray-200">ログアウト</button>
                         </form>
+                        @else
+                        <form action="{{ route('login') }}" method="GET">
+                            <button type="submit" class="p-3 text-sm w-full text-left dark:text-gray-200">ログイン</button>
+                        </form>
+                        @endif
                     </li>
                 </ul>
             </nav>
