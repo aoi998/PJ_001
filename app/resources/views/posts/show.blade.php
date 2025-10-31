@@ -21,7 +21,10 @@
             </form>
         </div>
         <div class="justify-self-center">
-            <button type="button" class="bg-gray-500 text-white rounded-md px-4 py-2">削除</button>
+            <form action="{{ route('post.destroy', ['post' => $post]) }}" method="POST">
+                @csrf
+                <button type="submit" class="bg-gray-500 text-white rounded-md px-4 py-2">削除</button>
+            </form>
         </div>
     </div>
 </div>

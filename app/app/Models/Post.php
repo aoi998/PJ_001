@@ -29,4 +29,11 @@ class Post extends Model
         $post->save();
         return $post;
     }
+
+    public function deletePost($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+        return $post;
+    }
 }

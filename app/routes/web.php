@@ -14,6 +14,7 @@ Route::post('/post/create', [PostController::class, 'store'])->name('post.store'
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
 Route::get('/post/edit/{post}', [PostController::class, 'edit'])->name('post.edit');
 Route::post('/post/edit/{post}', [PostController::class, 'update'])->name('post.update');
+Route::post('/post/delete/{post}', [PostController::class, 'destroy'])->name('post.destroy');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
