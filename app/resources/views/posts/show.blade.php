@@ -14,6 +14,7 @@
         </div>
     </div>
 
+    @if (auth()->check() && auth()->id === $post->user_id)
     <div class="flex justify-center gap-6 mx-auto">
         <div class="justify-self-center">
             <form action="{{ route('post.edit', ['post' => $post]) }}" method="GET">
@@ -27,5 +28,6 @@
             </form>
         </div>
     </div>
+    @endif
 </div>
 @endsection
