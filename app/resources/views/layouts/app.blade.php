@@ -19,7 +19,7 @@
         <header class="flex justify-between items-center h-20 p-3 bg-gray-300 dark:bg-gray-800">
             <h1 class="text-2xl font-bold dark:text-gray-200"><a href="{{ route('posts.index') }}">Instagram風画像投稿アプリ</a></h1>
             <nav>
-                <button type="button" id="button" class="z-10 fixed top-7 right-6 mb-3 text-gray-800 dark:text-gray-200">
+                <button type="button" id="button" class="z-10 fixed top-7 right-2 mb-3 text-gray-800 dark:text-gray-200">
                     <i id="bars">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -31,7 +31,7 @@
                         </svg>
                     </i>
                 </button>
-                <ul id="menu" class="z-0 fixed top-10 right-1 w-24 text-center bg-gray-300 dark:bg-gray-800 font-bold translate-x-full pt-6 pb-3 rounded-md">
+                <ul id="menu" class="z-0 fixed top-10 right-0 w-24 text-center bg-gray-300 dark:bg-gray-800 font-bold translate-x-full pt-6 pb-3 rounded-md">
                     <li>
                         <form action="{{ route('dashboard') }}" method="GET">
                             <button type="submit" class="p-3 text-sm w-full text-left dark:text-gray-200">ユーザー情報</button>
