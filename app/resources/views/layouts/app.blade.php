@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
+    <body class="min-h-screen">
         <!-- Page Heading -->
         <header class="flex justify-between items-center h-20 p-3 bg-gray-300 dark:bg-gray-800">
             <h1 class="text-2xl font-bold dark:text-gray-200"><a href="{{ route('posts.index') }}">Instagram風画像投稿アプリ</a></h1>
@@ -54,7 +54,7 @@
        </header>
 
         <!-- Page Content -->
-        <main class="bg-gray-100 dark:bg-gray-900">
+        <main class="bg-gray-100 dark:bg-gray-900 min-h-screen">
             <div class="mx-3">
                 @yield('content')
             </div>
